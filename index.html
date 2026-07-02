@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Справка — статус (моковый макет)</title>
+<style>
+  :root{
+    --bg: #F4F6F5;
+    --card-bg: #FFFFFF;
+    --ink: #17231F;
+    --ink-soft: #5B6B64;
+    --ok-bg: #EAF7EE;
+    --ok-border: #BFE3C9;
+    --ok-text: #1F7A3D;
+    --ok-icon: #2FA84F;
+    --divider: #E4E9E6;
+    --accent: #2FA84F;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding: 24px 12px;
+  }
+  .content{
+    width: 390px;
+    max-width: 100%;
+    padding: 4px 20px 28px;
+  }
+  .status-card{
+    background: var(--ok-bg);
+    border: 1px solid var(--ok-border);
+    border-radius: 16px;
+    padding: 18px;
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .status-icon{
+    width: 40px;
+    height: 40px;
+    flex-shrink:0;
+    border-radius: 50%;
+    background: var(--ok-icon);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .status-icon svg{ width:20px; height:20px; }
+  .status-text{
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ok-text);
+    line-height: 1.3;
+  }
+  .doc-title{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .doc-heading{
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .field:last-of-type{ border-bottom:none; }
+  .field-label{
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .field-value{
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .field-value.accent{
+    color: var(--ok-text);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: var(--accent);
+    display:inline-block;
+  }
+  .footer-note{
+    margin-top: 24px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height:1.5;
+    text-align:center;
+  }
+  .mock-badge{
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #17231F;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+
+
+  <div class="content">
+    <div class="status-card">
+      <div class="status-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="status-text">Справка действительна</div>
+    </div>
+
+    <div class="doc-title">Медицинская справка</div>
+    <div class="doc-heading">Допуск к спортивным мероприятиям</div>
+
+    <div class="field">
+      <div class="field-label">ФИО</div>
+      <div class="field-value">Степанов Дмитрий Андреевич</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Номер справки</div>
+      <div class="field-value">№ 110-1248990 / MOCK</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Дата выдачи</div>
+      <div class="field-value">16.06.2026</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Действительна до</div>
+      <div class="field-value">16.12.2026</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Статус</div>
+      <div class="field-value accent"><span class="dot"></span>Действительна</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
